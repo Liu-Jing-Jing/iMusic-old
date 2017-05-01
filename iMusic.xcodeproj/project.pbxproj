@@ -1,0 +1,671 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C50165251EA5216A009FEFBB /* iTunes.png in Resources */ = {isa = PBXBuildFile; fileRef = C50165241EA5216A009FEFBB /* iTunes.png */; };
+		C55EDE461E92861400154676 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55EDE451E92861400154676 /* Foundation.framework */; };
+		C55EDE481E92861400154676 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55EDE471E92861400154676 /* CoreGraphics.framework */; };
+		C55EDE4A1E92861400154676 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55EDE491E92861400154676 /* UIKit.framework */; };
+		C55EDE501E92861400154676 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C55EDE4E1E92861400154676 /* InfoPlist.strings */; };
+		C55EDE521E92861400154676 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C55EDE511E92861400154676 /* main.m */; };
+		C55EDE5E1E92861400154676 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C55EDE5D1E92861400154676 /* Images.xcassets */; };
+		C55EDE651E92861400154676 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55EDE641E92861400154676 /* XCTest.framework */; };
+		C55EDE661E92861400154676 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55EDE451E92861400154676 /* Foundation.framework */; };
+		C55EDE671E92861400154676 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55EDE491E92861400154676 /* UIKit.framework */; };
+		C55EDE6F1E92861400154676 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C55EDE6D1E92861400154676 /* InfoPlist.strings */; };
+		C55EDE711E92861400154676 /* iMusicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C55EDE701E92861400154676 /* iMusicTests.m */; };
+		C599C4731EA6747A0056E052 /* MJMoviePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C599C4701EA6747A0056E052 /* MJMoviePlayerViewController.m */; };
+		C599C4741EA6747A0056E052 /* MJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C599C4721EA6747A0056E052 /* MJViewController.m */; };
+		C599C4761EA674C10056E052 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C599C4751EA674C10056E052 /* AudioToolbox.framework */; };
+		C599C47A1EA6757F0056E052 /* FieldsOfGold.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C599C4791EA6757F0056E052 /* FieldsOfGold.mp3 */; };
+		C5AAA35A1EB744EF00A0F0EB /* MKLTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AAA3591EB744EF00A0F0EB /* MKLTabBarViewController.m */; };
+		C5AAA3611EB745CE00A0F0EB /* MKLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AAA3601EB745CE00A0F0EB /* MKLHomeViewController.m */; };
+		C5AAA3641EB745E400A0F0EB /* MKLMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AAA3631EB745E400A0F0EB /* MKLMessageViewController.m */; };
+		C5AAA3671EB7461D00A0F0EB /* MKLDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AAA3661EB7461D00A0F0EB /* MKLDiscoverViewController.m */; };
+		C5AAA36B1EB7463B00A0F0EB /* MKLMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AAA36A1EB7463B00A0F0EB /* MKLMeViewController.m */; };
+		C5AAA3701EB746EE00A0F0EB /* MKLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AAA36F1EB746EE00A0F0EB /* MKLTabBar.m */; };
+		C5AAA3731EB747B300A0F0EB /* MKLTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AAA3721EB747B300A0F0EB /* MKLTabBarButton.m */; };
+		C5AAA3761EB7490000A0F0EB /* UIImage+Quartz.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AAA3751EB7490000A0F0EB /* UIImage+Quartz.m */; };
+		C5AAA37A1EB749D200A0F0EB /* MKLBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AAA3791EB749D200A0F0EB /* MKLBadgeButton.m */; };
+		C5C0E0651EA63BF4000AD933 /* MKLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C0E05E1EA63BF4000AD933 /* MKLAppDelegate.m */; };
+		C5C0E0661EA63BF4000AD933 /* MKLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C0E0641EA63BF4000AD933 /* MKLViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C55EDE681E92861400154676 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C55EDE3A1E92861400154676 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C55EDE411E92861400154676;
+			remoteInfo = iMusic;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C50165241EA5216A009FEFBB /* iTunes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunes.png; sourceTree = "<group>"; };
+		C55EDE421E92861400154676 /* iMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C55EDE451E92861400154676 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C55EDE471E92861400154676 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C55EDE491E92861400154676 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C55EDE4D1E92861400154676 /* iMusic-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMusic-Info.plist"; sourceTree = "<group>"; };
+		C55EDE4F1E92861400154676 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C55EDE511E92861400154676 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C55EDE531E92861400154676 /* iMusic-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMusic-Prefix.pch"; sourceTree = "<group>"; };
+		C55EDE5D1E92861400154676 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C55EDE631E92861400154676 /* iMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C55EDE641E92861400154676 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		C55EDE6C1E92861400154676 /* iMusicTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMusicTests-Info.plist"; sourceTree = "<group>"; };
+		C55EDE6E1E92861400154676 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C55EDE701E92861400154676 /* iMusicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iMusicTests.m; sourceTree = "<group>"; };
+		C599C46F1EA6747A0056E052 /* MJMoviePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJMoviePlayerViewController.h; path = Class/MJMoviePlayerViewController.h; sourceTree = "<group>"; };
+		C599C4701EA6747A0056E052 /* MJMoviePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJMoviePlayerViewController.m; path = Class/MJMoviePlayerViewController.m; sourceTree = "<group>"; };
+		C599C4711EA6747A0056E052 /* MJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MJViewController.h; path = Class/MJViewController.h; sourceTree = "<group>"; };
+		C599C4721EA6747A0056E052 /* MJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MJViewController.m; path = Class/MJViewController.m; sourceTree = "<group>"; };
+		C599C4751EA674C10056E052 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C599C4791EA6757F0056E052 /* FieldsOfGold.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FieldsOfGold.mp3; sourceTree = "<group>"; };
+		C5AAA3581EB744EF00A0F0EB /* MKLTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLTabBarViewController.h; sourceTree = "<group>"; };
+		C5AAA3591EB744EF00A0F0EB /* MKLTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLTabBarViewController.m; sourceTree = "<group>"; };
+		C5AAA35F1EB745CE00A0F0EB /* MKLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLHomeViewController.h; sourceTree = "<group>"; };
+		C5AAA3601EB745CE00A0F0EB /* MKLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLHomeViewController.m; sourceTree = "<group>"; };
+		C5AAA3621EB745E400A0F0EB /* MKLMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLMessageViewController.h; sourceTree = "<group>"; };
+		C5AAA3631EB745E400A0F0EB /* MKLMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLMessageViewController.m; sourceTree = "<group>"; };
+		C5AAA3651EB7461D00A0F0EB /* MKLDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLDiscoverViewController.h; sourceTree = "<group>"; };
+		C5AAA3661EB7461D00A0F0EB /* MKLDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLDiscoverViewController.m; sourceTree = "<group>"; };
+		C5AAA3691EB7463B00A0F0EB /* MKLMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLMeViewController.h; sourceTree = "<group>"; };
+		C5AAA36A1EB7463B00A0F0EB /* MKLMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLMeViewController.m; sourceTree = "<group>"; };
+		C5AAA36E1EB746EE00A0F0EB /* MKLTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLTabBar.h; sourceTree = "<group>"; };
+		C5AAA36F1EB746EE00A0F0EB /* MKLTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLTabBar.m; sourceTree = "<group>"; };
+		C5AAA3711EB747B300A0F0EB /* MKLTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLTabBarButton.h; sourceTree = "<group>"; };
+		C5AAA3721EB747B300A0F0EB /* MKLTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLTabBarButton.m; sourceTree = "<group>"; };
+		C5AAA3741EB7490000A0F0EB /* UIImage+Quartz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Quartz.h"; sourceTree = "<group>"; };
+		C5AAA3751EB7490000A0F0EB /* UIImage+Quartz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Quartz.m"; sourceTree = "<group>"; };
+		C5AAA3781EB749D200A0F0EB /* MKLBadgeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLBadgeButton.h; sourceTree = "<group>"; };
+		C5AAA3791EB749D200A0F0EB /* MKLBadgeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLBadgeButton.m; sourceTree = "<group>"; };
+		C5C0E05D1EA63BF4000AD933 /* MKLAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKLAppDelegate.h; sourceTree = "<group>"; };
+		C5C0E05E1EA63BF4000AD933 /* MKLAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKLAppDelegate.m; sourceTree = "<group>"; };
+		C5C0E0631EA63BF4000AD933 /* MKLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MKLViewController.h; path = Class/MKLViewController.h; sourceTree = "<group>"; };
+		C5C0E0641EA63BF4000AD933 /* MKLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MKLViewController.m; path = Class/MKLViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C55EDE3F1E92861400154676 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C599C4761EA674C10056E052 /* AudioToolbox.framework in Frameworks */,
+				C55EDE481E92861400154676 /* CoreGraphics.framework in Frameworks */,
+				C55EDE4A1E92861400154676 /* UIKit.framework in Frameworks */,
+				C55EDE461E92861400154676 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55EDE601E92861400154676 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55EDE651E92861400154676 /* XCTest.framework in Frameworks */,
+				C55EDE671E92861400154676 /* UIKit.framework in Frameworks */,
+				C55EDE661E92861400154676 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C55EDE391E92861400154676 = {
+			isa = PBXGroup;
+			children = (
+				C55EDE4B1E92861400154676 /* iMusic */,
+				C55EDE6A1E92861400154676 /* iMusicTests */,
+				C55EDE441E92861400154676 /* Frameworks */,
+				C55EDE431E92861400154676 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C55EDE431E92861400154676 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C55EDE421E92861400154676 /* iMusic.app */,
+				C55EDE631E92861400154676 /* iMusicTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C55EDE441E92861400154676 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C599C4751EA674C10056E052 /* AudioToolbox.framework */,
+				C55EDE451E92861400154676 /* Foundation.framework */,
+				C55EDE471E92861400154676 /* CoreGraphics.framework */,
+				C55EDE491E92861400154676 /* UIKit.framework */,
+				C55EDE641E92861400154676 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C55EDE4B1E92861400154676 /* iMusic */ = {
+			isa = PBXGroup;
+			children = (
+				C5C0E05A1EA63BF4000AD933 /* Class */,
+				C55EDE4C1E92861400154676 /* Supporting Files */,
+			);
+			path = iMusic;
+			sourceTree = "<group>";
+		};
+		C55EDE4C1E92861400154676 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C5C0E0631EA63BF4000AD933 /* MKLViewController.h */,
+				C5C0E0641EA63BF4000AD933 /* MKLViewController.m */,
+				C599C4711EA6747A0056E052 /* MJViewController.h */,
+				C599C4721EA6747A0056E052 /* MJViewController.m */,
+				C599C46F1EA6747A0056E052 /* MJMoviePlayerViewController.h */,
+				C599C4701EA6747A0056E052 /* MJMoviePlayerViewController.m */,
+				C55EDE5D1E92861400154676 /* Images.xcassets */,
+				C599C4791EA6757F0056E052 /* FieldsOfGold.mp3 */,
+				C50165241EA5216A009FEFBB /* iTunes.png */,
+				C55EDE4D1E92861400154676 /* iMusic-Info.plist */,
+				C55EDE4E1E92861400154676 /* InfoPlist.strings */,
+				C55EDE511E92861400154676 /* main.m */,
+				C55EDE531E92861400154676 /* iMusic-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C55EDE6A1E92861400154676 /* iMusicTests */ = {
+			isa = PBXGroup;
+			children = (
+				C55EDE701E92861400154676 /* iMusicTests.m */,
+				C55EDE6B1E92861400154676 /* Supporting Files */,
+			);
+			path = iMusicTests;
+			sourceTree = "<group>";
+		};
+		C55EDE6B1E92861400154676 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C55EDE6C1E92861400154676 /* iMusicTests-Info.plist */,
+				C55EDE6D1E92861400154676 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5AAA3571EB7449100A0F0EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAA3581EB744EF00A0F0EB /* MKLTabBarViewController.h */,
+				C5AAA3591EB744EF00A0F0EB /* MKLTabBarViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C5AAA35B1EB7458B00A0F0EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAA35F1EB745CE00A0F0EB /* MKLHomeViewController.h */,
+				C5AAA3601EB745CE00A0F0EB /* MKLHomeViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C5AAA35C1EB7459E00A0F0EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAA3621EB745E400A0F0EB /* MKLMessageViewController.h */,
+				C5AAA3631EB745E400A0F0EB /* MKLMessageViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C5AAA35D1EB745A300A0F0EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAA3651EB7461D00A0F0EB /* MKLDiscoverViewController.h */,
+				C5AAA3661EB7461D00A0F0EB /* MKLDiscoverViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C5AAA3681EB7462300A0F0EB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAA3691EB7463B00A0F0EB /* MKLMeViewController.h */,
+				C5AAA36A1EB7463B00A0F0EB /* MKLMeViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C5AAA36C1EB746D500A0F0EB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAA36E1EB746EE00A0F0EB /* MKLTabBar.h */,
+				C5AAA36F1EB746EE00A0F0EB /* MKLTabBar.m */,
+				C5AAA3711EB747B300A0F0EB /* MKLTabBarButton.h */,
+				C5AAA3721EB747B300A0F0EB /* MKLTabBarButton.m */,
+				C5AAA3781EB749D200A0F0EB /* MKLBadgeButton.h */,
+				C5AAA3791EB749D200A0F0EB /* MKLBadgeButton.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C5AAA36D1EB746DD00A0F0EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C5AAA3771EB7490400A0F0EB /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAA3741EB7490000A0F0EB /* UIImage+Quartz.h */,
+				C5AAA3751EB7490000A0F0EB /* UIImage+Quartz.m */,
+			);
+			name = Category;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		C5AAA37B1EB74E3900A0F0EB /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAA36D1EB746DD00A0F0EB /* Model */,
+				C5AAA36C1EB746D500A0F0EB /* View */,
+				C5AAA3571EB7449100A0F0EB /* Controller */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		C5C0E05A1EA63BF4000AD933 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				C5C0E05B1EA63BF4000AD933 /* Common */,
+				C5C0E0601EA63BF4000AD933 /* Home */,
+				C5C0E0621EA63BF4000AD933 /* Message */,
+				C5C0E05F1EA63BF4000AD933 /* Discover */,
+				C5C0E0611EA63BF4000AD933 /* Me */,
+			);
+			path = Class;
+			sourceTree = "<group>";
+		};
+		C5C0E05B1EA63BF4000AD933 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAA37B1EB74E3900A0F0EB /* Main */,
+				C5C0E05C1EA63BF4000AD933 /* Other */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C5C0E05C1EA63BF4000AD933 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAA3771EB7490400A0F0EB /* Category */,
+				C5C0E05D1EA63BF4000AD933 /* MKLAppDelegate.h */,
+				C5C0E05E1EA63BF4000AD933 /* MKLAppDelegate.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		C5C0E05F1EA63BF4000AD933 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAA35D1EB745A300A0F0EB /* Controller */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		C5C0E0601EA63BF4000AD933 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAA35B1EB7458B00A0F0EB /* Controller */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C5C0E0611EA63BF4000AD933 /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAA3681EB7462300A0F0EB /* Controller */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		C5C0E0621EA63BF4000AD933 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				C5AAA35C1EB7459E00A0F0EB /* Controller */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C55EDE411E92861400154676 /* iMusic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C55EDE741E92861400154676 /* Build configuration list for PBXNativeTarget "iMusic" */;
+			buildPhases = (
+				C55EDE3E1E92861400154676 /* Sources */,
+				C55EDE3F1E92861400154676 /* Frameworks */,
+				C55EDE401E92861400154676 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iMusic;
+			productName = iMusic;
+			productReference = C55EDE421E92861400154676 /* iMusic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C55EDE621E92861400154676 /* iMusicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C55EDE771E92861400154676 /* Build configuration list for PBXNativeTarget "iMusicTests" */;
+			buildPhases = (
+				C55EDE5F1E92861400154676 /* Sources */,
+				C55EDE601E92861400154676 /* Frameworks */,
+				C55EDE611E92861400154676 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C55EDE691E92861400154676 /* PBXTargetDependency */,
+			);
+			name = iMusicTests;
+			productName = iMusicTests;
+			productReference = C55EDE631E92861400154676 /* iMusicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C55EDE3A1E92861400154676 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MKL;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = MarkLewis;
+				TargetAttributes = {
+					C55EDE621E92861400154676 = {
+						TestTargetID = C55EDE411E92861400154676;
+					};
+				};
+			};
+			buildConfigurationList = C55EDE3D1E92861400154676 /* Build configuration list for PBXProject "iMusic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C55EDE391E92861400154676;
+			productRefGroup = C55EDE431E92861400154676 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C55EDE411E92861400154676 /* iMusic */,
+				C55EDE621E92861400154676 /* iMusicTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C55EDE401E92861400154676 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55EDE5E1E92861400154676 /* Images.xcassets in Resources */,
+				C50165251EA5216A009FEFBB /* iTunes.png in Resources */,
+				C55EDE501E92861400154676 /* InfoPlist.strings in Resources */,
+				C599C47A1EA6757F0056E052 /* FieldsOfGold.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55EDE611E92861400154676 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55EDE6F1E92861400154676 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C55EDE3E1E92861400154676 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5AAA3701EB746EE00A0F0EB /* MKLTabBar.m in Sources */,
+				C599C4741EA6747A0056E052 /* MJViewController.m in Sources */,
+				C5AAA35A1EB744EF00A0F0EB /* MKLTabBarViewController.m in Sources */,
+				C5C0E0661EA63BF4000AD933 /* MKLViewController.m in Sources */,
+				C5AAA37A1EB749D200A0F0EB /* MKLBadgeButton.m in Sources */,
+				C5AAA3731EB747B300A0F0EB /* MKLTabBarButton.m in Sources */,
+				C55EDE521E92861400154676 /* main.m in Sources */,
+				C5AAA3671EB7461D00A0F0EB /* MKLDiscoverViewController.m in Sources */,
+				C5AAA36B1EB7463B00A0F0EB /* MKLMeViewController.m in Sources */,
+				C5AAA3611EB745CE00A0F0EB /* MKLHomeViewController.m in Sources */,
+				C5AAA3761EB7490000A0F0EB /* UIImage+Quartz.m in Sources */,
+				C5AAA3641EB745E400A0F0EB /* MKLMessageViewController.m in Sources */,
+				C5C0E0651EA63BF4000AD933 /* MKLAppDelegate.m in Sources */,
+				C599C4731EA6747A0056E052 /* MJMoviePlayerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C55EDE5F1E92861400154676 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C55EDE711E92861400154676 /* iMusicTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C55EDE691E92861400154676 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C55EDE411E92861400154676 /* iMusic */;
+			targetProxy = C55EDE681E92861400154676 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C55EDE4E1E92861400154676 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C55EDE4F1E92861400154676 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		C55EDE6D1E92861400154676 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C55EDE6E1E92861400154676 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C55EDE721E92861400154676 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C55EDE731E92861400154676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C55EDE751E92861400154676 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iMusic/iMusic-Prefix.pch";
+				INFOPLIST_FILE = "iMusic/iMusic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		C55EDE761E92861400154676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iMusic/iMusic-Prefix.pch";
+				INFOPLIST_FILE = "iMusic/iMusic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C55EDE781E92861400154676 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iMusic.app/iMusic";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iMusic/iMusic-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "iMusicTests/iMusicTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		C55EDE791E92861400154676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iMusic.app/iMusic";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iMusic/iMusic-Prefix.pch";
+				INFOPLIST_FILE = "iMusicTests/iMusicTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C55EDE3D1E92861400154676 /* Build configuration list for PBXProject "iMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C55EDE721E92861400154676 /* Debug */,
+				C55EDE731E92861400154676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C55EDE741E92861400154676 /* Build configuration list for PBXNativeTarget "iMusic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C55EDE751E92861400154676 /* Debug */,
+				C55EDE761E92861400154676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C55EDE771E92861400154676 /* Build configuration list for PBXNativeTarget "iMusicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C55EDE781E92861400154676 /* Debug */,
+				C55EDE791E92861400154676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C55EDE3A1E92861400154676 /* Project object */;
+}
