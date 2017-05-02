@@ -14,7 +14,8 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
+    if (self)
+    {
         self.hidden = YES;
         self.userInteractionEnabled = NO;
         [self setBackgroundImage:[UIImage resizedImageWithName:@"main_badge"] forState:UIControlStateNormal];
@@ -25,11 +26,12 @@
 
 - (void)setBadgeValue:(NSString *)badgeValue
 {
-    // #warning copy
+    // #warning copy 为什么属性是copy setter写法不同
     // _badgeValue = badgeValue;
     _badgeValue = [badgeValue copy];
     
-    if (badgeValue) {
+    if (badgeValue)
+    {
         self.hidden = NO;
         // 设置文字
         [self setTitle:badgeValue forState:UIControlStateNormal];
@@ -50,10 +52,13 @@
 #endif
             badgeW = badgeSize.width + 10;
         }
+        
         frame.size.width = badgeW;
         frame.size.height = badgeH;
         self.frame = frame;
-    } else {
+    }
+    else
+    {
         self.hidden = YES;
     }
 }

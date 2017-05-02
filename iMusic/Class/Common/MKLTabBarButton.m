@@ -10,7 +10,7 @@
 #import "MKLTabBarButton.h"
 #import "MKLBadgeButton.h"
 // 图标的比例
-#define MKLTabBarButtonImageRatio 0.65
+#define MKLTabBarButtonImageRatio 0.6
 
 // 按钮的默认文字颜色
 #define  MKLTabBarButtonTitleColor (iOS7 ? [UIColor blackColor] : [UIColor whiteColor])
@@ -30,7 +30,8 @@
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
+    if (self)
+    {
         // 图标居中
         self.imageView.contentMode = UIViewContentModeCenter;
         // 文字居中
@@ -41,7 +42,9 @@
         [self setTitleColor:MKLTabBarButtonTitleColor forState:UIControlStateNormal];
         [self setTitleColor:MKLTabBarButtonTitleSelectedColor forState:UIControlStateSelected];
         
-        if (!iOS7) { // 非iOS7下,设置按钮选中时的背景
+        if (!iOS7)
+        {
+            // 非iOS7下,设置按钮选中时的背景
             [self setBackgroundImage:[UIImage imageWithName:@"tabbar_slider"] forState:UIControlStateSelected];
         }
         

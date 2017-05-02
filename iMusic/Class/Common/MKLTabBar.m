@@ -69,7 +69,8 @@
     [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchDown];
     
     // 4.默认选中第0个按钮
-    if (self.tabBarButtons.count == 1) {
+    if (self.tabBarButtons.count == 1)
+    {
         [self buttonClick:button];
     }
 }
@@ -91,8 +92,11 @@
 - (void)buttonClick:(MKLTabBarButton *)button
 {
     // 1.通知代理
-    if ([self.delegate respondsToSelector:@selector(tabBar:didSelectedButtonFrom:to:)]) {
-        [self.delegate tabBar:self didSelectedButtonFrom:(int)self.selectedButton.tag to:(int)button.tag];
+    if ([self.delegate respondsToSelector:@selector(tabBar:didSelectedButtonFrom:to:)])
+    {
+        [self.delegate tabBar:self
+        didSelectedButtonFrom:(int)self.selectedButton.tag
+                           to:(int)button.tag];
     }
     
     // 2.设置按钮的状态
@@ -115,13 +119,15 @@
     CGFloat buttonW = w / self.subviews.count;
     CGFloat buttonY = 0;
     
-    for (int index = 0; index<self.tabBarButtons.count; index++) {
+    for (int index = 0; index<self.tabBarButtons.count; index++)
+    {
         // 1.取出按钮
         MKLTabBarButton *button = self.tabBarButtons[index];
         
         // 2.设置按钮的frame
         CGFloat buttonX = index * buttonW;
-        if (index > 1) {
+        if (index > 1)
+        {
             buttonX += buttonW;
         }
         button.frame = CGRectMake(buttonX, buttonY, buttonW, buttonH);
