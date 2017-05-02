@@ -84,7 +84,7 @@
     UIImage *selectedImage = [UIImage imageWithName:selectedImageName];
     if (iOS7)
     {
-        childVc.tabBarItem.selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        childVc.tabBarItem.selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]; // 不要渲染成系统的颜色
     }
     else
     {

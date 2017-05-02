@@ -26,8 +26,8 @@
 
 
 /**
- *  加载图片
- *
+ *  根据系统版本不同来加载对应图片
+ *  返回适用于6或iOS 7的图片
  *  @param name 图片名
  */
 + (UIImage *)imageWithName:(NSString *)name;

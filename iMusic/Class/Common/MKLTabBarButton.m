@@ -10,7 +10,7 @@
 #import "MKLTabBarButton.h"
 #import "MKLBadgeButton.h"
 // 图标的比例
-#define MKLTabBarButtonImageRatio 0.6
+#define MKLTabBarButtonImageRatio 0.65
 
 // 按钮的默认文字颜色
 #define  MKLTabBarButtonTitleColor (iOS7 ? [UIColor blackColor] : [UIColor whiteColor])

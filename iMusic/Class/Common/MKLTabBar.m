@@ -39,6 +39,10 @@
         
         // 添加一个加号按钮
         UIButton *plusButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [plusButton addTarget:self
+                       action:@selector(pressedPlusButtonAction:)
+             forControlEvents:UIControlEventTouchDown];
+        
         [plusButton setBackgroundImage:[UIImage imageWithName:@"tabbar_compose_button"] forState:UIControlStateNormal];
         [plusButton setBackgroundImage:[UIImage imageWithName:@"tabbar_compose_button_highlighted"] forState:UIControlStateHighlighted];
         [plusButton setImage:[UIImage imageWithName:@"tabbar_compose_icon_add"] forState:UIControlStateNormal];
@@ -71,6 +75,17 @@
 }
 
 /**
+ *  触摸了中间的橙色按钮
+ *
+ *  @param sender 按钮对象
+ */
+- (void)pressedPlusButtonAction:(id)sender
+{
+    NSLog(@"Pluse button touch down");
+}
+
+
+/**
  *  监听按钮点击
  */
 - (void)buttonClick:(MKLTabBarButton *)button
@@ -89,7 +104,7 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
+    NSLog(@"tabBar layout"); //只调用了一次
     // 调整加号按钮的位置
     CGFloat h = self.frame.size.height;
     CGFloat w = self.frame.size.width;
