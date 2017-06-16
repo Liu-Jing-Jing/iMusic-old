@@ -13,6 +13,17 @@
 @end
 
 @implementation MKLProductListController
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(close)];
+}
+
+- (void)close
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

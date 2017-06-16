@@ -61,8 +61,11 @@
 
 - (void)captureFinished:(NSNotification *)notification
 {
-    NSLog(@"%@", notification);
-    [self.delegate moviePlayerDidCapturedWithImage:notification.userInfo[MPMoviePlayerThumbnailImageKey]];
+    if([self.delegate respondsToSelector:@selector(moviePlayerDidCapturedWithImage:)])
+    {
+        // NSLog(@"%@", notification);
+        [self.delegate moviePlayerDidCapturedWithImage:notification.userInfo[MPMoviePlayerThumbnailImageKey]];
+    }
 }
 
 - (void)finished

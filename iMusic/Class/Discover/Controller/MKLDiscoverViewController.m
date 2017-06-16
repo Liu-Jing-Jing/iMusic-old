@@ -9,6 +9,11 @@
 #import "MKLDiscoverViewController.h"
 #import "MKLProductListController.h"
 #import "MKLSearchBar.h"
+#import "SettingGroup.h"
+#import "SettingArrowItem.h"
+#import "KDDisplayHTMLViewController.h"
+#import "SettingCell.h"
+#import "MKLMainNavigationController.h"
 @interface MKLDiscoverViewController ()
 @property (nonatomic, strong) NSMutableArray *data;
 @end
@@ -26,7 +31,6 @@
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
-        [self.data addObject:@"Product List"];
     }
     return self;
 }
@@ -43,26 +47,41 @@
     searchBar.frame = CGRectMake(0, 0, 300, 30);
     // 设置中间的标题内容
     self.navigationItem.titleView = searchBar;
+    
+    [self setupGroupData];
 }
 
+- (void)setupGroupData
+{
+    // 第一组
+    SettingItem *bookList = [SettingArrowItem itemWithIcon:nil title:@"Awesome-iOS" destVcClass:[KDDisplayHTMLViewController class]];
+    
+    SettingItem *productList = [SettingArrowItem itemWithIcon:nil title:@"Product List" destVcClass:[MKLProductListController class]];
+    SettingGroup *group0 = [[SettingGroup alloc]init];
+    //group0.header = @"推送和提醒";
+    //group0.footer = @"推送和提醒";
+    group0.items = @[bookList, productList];
+    
+    [self.data addObject:group0];
+
+}
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return self.data.count;
+    SettingGroup *group = self.data[section];
+    return group.items.count;
 }
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"discoverCellID";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
-    
-    // Configure the cell...
-    cell.textLabel.text = self.data[indexPath.row];
+    SettingCell *cell = [SettingCell cellWithTableView:tableView];
+    // 设置cell数据
+    SettingGroup *group = self.data[indexPath.section];
+    SettingItem *item = group.items[indexPath.row];
+    cell.item = item;
     
     return cell;
 }
@@ -70,8 +89,39 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    MKLProductListController *productListVC = [[MKLProductListController alloc] init];
-    [self.navigationController pushViewController:productListVC animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    SettingGroup *group = self.data[indexPath.section];
+    SettingItem *item = group.items[indexPath.row];
+    
+    // 点击cell运行代码
+    if (item.option)
+    {
+        item.option();
+    }
+    
+    if ([item isKindOfClass:[SettingArrowItem class]])
+    {
+        SettingArrowItem *arrItem =(SettingArrowItem *) item;
+        if (arrItem.destVcClass == nil)
+        {
+            return;
+        }
+        UIViewController *vc = [[arrItem.destVcClass alloc]init];
+        vc.title = arrItem.title;
+        
+        if([item.title isEqualToString:@"Product List"])
+        {
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+            [self presentViewController:nav animated:YES completion:^{}];
+        }
+        else
+        {
+            [self presentViewController:vc animated:YES completion:^{}];
+        }
+        
+    }
+//    MKLProductListController *productListVC = [[MKLProductListController alloc] init];
+//    [self.navigationController pushViewController:productListVC animated:YES];
 }
 
 

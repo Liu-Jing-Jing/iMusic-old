@@ -11,6 +11,8 @@
 @protocol MJMoviePlayerViewControllerDelegate <NSObject>
 
 - (void)moviePlayerDidFinished;
+
+@optional
 - (void)moviePlayerDidCapturedWithImage:(UIImage *)image;
 
 @end
