@@ -8,7 +8,7 @@
 
 #import "MJMoviePlayerViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
-
+#include <sys/socket.h>
 @interface MJMoviePlayerViewController ()
 @property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
 @end
@@ -66,6 +66,8 @@
         // NSLog(@"%@", notification);
         [self.delegate moviePlayerDidCapturedWithImage:notification.userInfo[MPMoviePlayerThumbnailImageKey]];
     }
+    
+    
 }
 
 - (void)finished
@@ -104,4 +106,9 @@
     }
 }
 
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+//{
+//    // Return YES for supported orientations
+//    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+//}
 @end

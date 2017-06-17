@@ -23,7 +23,7 @@
 // 2.获得RGB颜色
 #define MKLColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
-// 3.调试的函数
+// 3.自定义调试Log函数
 #ifdef DEBUG
 #   define MKLog(fmt, ...) NSLog((@"%s " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__);
 // #   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
@@ -34,5 +34,10 @@
 
 // ALog always displays output regardless of the DEBUG setting
 #define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+
+/*授权 账号相关*/
+#define WBAppKey        @"2976507745"
+#define WBAppSecret     @"5c6ee830403084f78424aacf7f9e1fbf"
+#define WBRedirectUrl   @"https://api.weibo.com/oauth2/default.html"
 
 #endif

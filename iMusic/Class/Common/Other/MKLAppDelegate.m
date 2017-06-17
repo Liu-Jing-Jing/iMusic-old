@@ -8,18 +8,36 @@
 
 #import "MKLAppDelegate.h"
 #import "MKLTabBarViewController.h"
+#import "WBOAuthViewController.h"
+#import "WBWeiboTool.h"
+#import "WBAccountTool.h"
+#import "WBAccount.h"
 @implementation MKLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // 显示状态栏
-    application.statusBarHidden = NO;
+     application.statusBarHidden = YES;
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[MKLTabBarViewController alloc] init];
     [self.window makeKeyAndVisible];
     
     // Override point for customization after application launch.
+    // 先判断有无存储账号信息
+    WBAccount *account = [WBAccountTool account];
+    
+    if (account)
+    {
+        // 之前登录成功
+        [WBWeiboTool chooseRootViewController];
+    }
+    else
+    {
+        // 之前没有登录成功
+        self.window.rootViewController = [[WBOAuthViewController alloc] init];
+    }
+    
+    
     return YES;
 }
 							

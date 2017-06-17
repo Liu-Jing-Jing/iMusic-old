@@ -7,22 +7,12 @@
 //
 
 #import "MKLMessageViewController.h"
-#import "SettingCell.h"
-#import "SettingGroup.h"
-#import "SettingArrowItem.h"
-#import "MKLMusicListViewController.h"
+
 @interface MKLMessageViewController ()
-@property (nonatomic, strong) NSMutableArray *data;
 @end
 
 @implementation MKLMessageViewController
 
-- (NSMutableArray *)data
-{
-    if(_data == nil) _data = [NSMutableArray array];
-    
-    return _data;
-}
 #pragma mark - View Lifecycle
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -39,19 +29,6 @@
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"写私信" style:UIBarButtonItemStyleDone target:nil action:nil];
-    
-    [self setupGroupData];
-}
-
-- (void)setupGroupData
-{
-    // 第一组
-    SettingItem *musicList = [SettingArrowItem itemWithIcon:nil title:@"我的音乐" destVcClass:[MKLMusicListViewController class]];
-    SettingGroup *group0 = [[SettingGroup alloc]init];
-    group0.items = @[musicList];
-    
-    [self.data addObject:group0];
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,45 +41,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return self.data.count;
+    return 0;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Configure the cell...
-    SettingCell *cell = [SettingCell cellWithTableView:tableView];
-    // 设置cell数据
-    SettingGroup *group = self.data[indexPath.section];
-    SettingItem *item = group.items[indexPath.row];
-    cell.item = item;
-    
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    SettingGroup *group = self.data[indexPath.section];
-    SettingItem *item = group.items[indexPath.row];
-    
-    if (item.option)
-    {
-        item.option();
-    }
-    
-    if ([item isKindOfClass:[SettingArrowItem class]])
-    {
-        SettingArrowItem *arrItem =(SettingArrowItem *) item;
-        if (arrItem.destVcClass == nil)
-        {
-            return;
-        }
-        
-        UIViewController *vc = [[arrItem.destVcClass alloc]init];
-        [self.navigationController pushViewController:vc animated:YES];
-    }
-}
 
 /*
 // Override to support editing the table view.

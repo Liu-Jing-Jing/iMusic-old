@@ -14,6 +14,7 @@
 #import "KDDisplayHTMLViewController.h"
 #import "SettingCell.h"
 #import "MKLMainNavigationController.h"
+#import "MKLMusicListViewController.h"
 @interface MKLDiscoverViewController ()
 @property (nonatomic, strong) NSMutableArray *data;
 @end
@@ -62,10 +63,22 @@
     //group0.footer = @"推送和提醒";
     group0.items = @[bookList, productList];
     
+    
+    // 第一组
+    SettingItem *musicList = [SettingArrowItem itemWithIcon:nil title:@"我的音乐" destVcClass:[MKLMusicListViewController class]];
+    SettingGroup *group1 = [[SettingGroup alloc]init];
+    group1.items = @[musicList];
+    
     [self.data addObject:group0];
+    [self.data addObject:group1];
 
 }
 #pragma mark - Table view data source
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.data.count;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
@@ -109,16 +122,15 @@
         UIViewController *vc = [[arrItem.destVcClass alloc]init];
         vc.title = arrItem.title;
         
-        if([item.title isEqualToString:@"Product List"])
+        if([item.title isEqualToString:@"Awesome-iOS"])
         {
-            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-            [self presentViewController:nav animated:YES completion:^{}];
+            [self presentViewController:vc animated:YES completion:nil];
         }
         else
         {
-            [self presentViewController:vc animated:YES completion:^{}];
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+            [self presentViewController:nav animated:YES completion:nil];
         }
-        
     }
 //    MKLProductListController *productListVC = [[MKLProductListController alloc] init];
 //    [self.navigationController pushViewController:productListVC animated:YES];
