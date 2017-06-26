@@ -7,48 +7,87 @@
 //
 
 #import "MKLMeViewController.h"
+#import "RETableViewManager.h"
+#import "WBSubtitleItem.h"
+#define SectionHeaderHeight 12
+#define SectionFooterHeight 0.5
 
-@interface MKLMeViewController ()
-
+@interface MKLMeViewController ()<RETableViewManagerDelegate>
+@property (nonatomic, strong) RETableViewManager *manager;
+@property (nonatomic, assign) CGFloat groupSpace;
 @end
 
 @implementation MKLMeViewController
 
+#pragma mark - init 设置分组模式
+- (id)init
+{
+    return [super initWithStyle:UITableViewStyleGrouped];
+    
+}
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    return [super initWithStyle:UITableViewStyleGrouped];
 }
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"设置" style:UIBarButtonItemStyleDone target:nil action:nil];
+    
+    // 创建RETableViewManager管理类
+    self.manager = [[RETableViewManager alloc]initWithTableView:self.tableView delegate:self];
+    
+    // 设置tableview边框
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 6, 0);
+    
+    // 设置分割线
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    
+    [self setupOtherInfo];
 }
 
-- (void)didReceiveMemoryWarning
+
+- (void)setupOtherInfo
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    // 注册cell
+    self.manager[@"WBSubtitleItem"] = @"WBSubtitleCell";
+    
+    // 设置第三组
+    RETableViewSection *section = [RETableViewSection section];
+    [self.manager addSection:section];
+    section.headerHeight = SectionHeaderHeight;
+    section.footerHeight = SectionFooterHeight;
+    
+    // 设置item
+    WBSubtitleItem *hotWeibo = [WBSubtitleItem itemWithTitle:@"热门微博" subtitle:@"笑话，娱乐都搬到这里来啦" imageName:@"hot_status"];
+    hotWeibo.subtitleAlignment = NSTextAlignmentRight;
+    WBSubtitleItem *findpeople = [WBSubtitleItem itemWithTitle:@"找人" subtitle:@"名人，专家，有趣的人尽在这里" imageName:@"find_people"];
+    findpeople.subtitleAlignment = NSTextAlignmentRight;
+    [section addItemsFromArray:@[hotWeibo,findpeople]];
+    
+    // 设置第四组
+    section = [RETableViewSection section];
+    [self.manager addSection:section];
+    section.headerHeight = SectionHeaderHeight;
+    section.footerHeight = SectionFooterHeight;
+    
+    // 设置item
+    WBSubtitleItem *gameCenter = [WBSubtitleItem itemWithTitle:@"游戏中心" imageName:@"game_center"];
+    // 发现身边的有缘人，有趣事
+    WBSubtitleItem *near = [WBSubtitleItem itemWithTitle:@"周边" subtitle:@"发现身边" imageName:@"near"];
+    //near.accessoryType
+    near.subtitleAlignment = NSTextAlignmentRight;
+    near.subtitleFont = [UIFont systemFontOfSize:14];
+    [section addItemsFromArray:@[gameCenter,near]];
 }
 
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 0;
-}
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return 0;
-}
+
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

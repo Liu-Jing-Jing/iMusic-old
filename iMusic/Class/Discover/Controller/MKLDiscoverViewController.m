@@ -15,6 +15,7 @@
 #import "SettingCell.h"
 #import "MKLMainNavigationController.h"
 #import "MKLMusicListViewController.h"
+#import "JTSDemoViewController.h"
 @interface MKLDiscoverViewController ()
 @property (nonatomic, strong) NSMutableArray *data;
 @end
@@ -58,10 +59,13 @@
     SettingItem *bookList = [SettingArrowItem itemWithIcon:nil title:@"Awesome-iOS" destVcClass:[KDDisplayHTMLViewController class]];
     
     SettingItem *productList = [SettingArrowItem itemWithIcon:nil title:@"Product List" destVcClass:[MKLProductListController class]];
+    
+    
+    SettingItem *jtsImageViewerDemo = [SettingArrowItem itemWithIcon:nil title:@"JTS ImageViewer Demo" destVcClass:[JTSDemoViewController class]];
     SettingGroup *group0 = [[SettingGroup alloc]init];
     //group0.header = @"推送和提醒";
     //group0.footer = @"推送和提醒";
-    group0.items = @[bookList, productList];
+    group0.items = @[bookList, productList, jtsImageViewerDemo];
     
     
     // 第一组
