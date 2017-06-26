@@ -35,7 +35,7 @@
     //取出账号
     WBAccount *account = [NSKeyedUnarchiver unarchiveObjectWithFile:[self accountFilePath]];
     NSDate *curData = [NSDate date];
-    MKLog(@"授权过期时间%lld ", account.expires_in);
+    MKLog(@"授权过期时间%@ ", account.expiresTime);
     // 比较是否过期
     if ([curData compare:account.expiresTime] == NSOrderedAscending)
     {

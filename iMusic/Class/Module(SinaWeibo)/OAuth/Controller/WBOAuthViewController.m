@@ -40,6 +40,14 @@
     NSURL *url = [NSURL URLWithString:oAuthStr];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [webView loadRequest:request];
+    
+    self.title = @"微博授权";
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(close)];
+}
+
+- (void)close
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView
@@ -82,9 +90,11 @@
 {
     // 获取accessToken
     [WBAccountTool accessTokenWithCode:code success:^{
-        // 选择控制器
-        [WBWeiboTool chooseRootViewController];
+        if([self.delegate respondsToSelector:@selector(weiboOAuth2Success)])
+            [self.delegate weiboOAuth2Success];
         
+        // 先通知代理。在退出
+        [self dismissViewControllerAnimated:YES completion:nil];
         [MBProgressHUD hideHUD];
     } failure:^(NSError *error) {
         MKLog(@"accessToken请求失败：%@",error);

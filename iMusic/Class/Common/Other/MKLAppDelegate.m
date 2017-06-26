@@ -7,11 +7,11 @@
 //
 
 #import "MKLAppDelegate.h"
-#import "MKLTabBarViewController.h"
-#import "WBOAuthViewController.h"
+#import "MKLLoginViewController.h"
 #import "WBWeiboTool.h"
 #import "WBAccountTool.h"
 #import "WBAccount.h"
+
 @implementation MKLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -34,9 +34,8 @@
     else
     {
         // 之前没有登录成功
-        self.window.rootViewController = [[WBOAuthViewController alloc] init];
+        self.window.rootViewController = [[MKLLoginViewController alloc] init];
     }
-    
     
     return YES;
 }

@@ -9,8 +9,21 @@
 #import "MKLHomeViewController.h"
 #import "UIBarButtonItem+Extension.h"
 #import "MKLTitleButton.h"
+#import "WBAccount.h"
+#import "WBAccountTool.h"
+#import "WBWeiboTool.h"
+#import "WBOAuthViewController.h"
+#import "WBStatusCell.h"
+#import "WBStatus.h"
+#import "WBUserModel.h"
+#import "WBStatusFrame.h"
+#import "AFNetworking.h"
+#import "MJExtension.h"
+#import "UIImageView+WebCache.h"
+
 @interface MKLHomeViewController ()
 
+@property (nonatomic, strong) NSArray *statusFrames;
 @end
 
 @implementation MKLHomeViewController
@@ -29,6 +42,14 @@
 {
     [super viewDidLoad];
 
+    [self setupNavAndTableTheme];
+    
+    [self setupStatusData];
+}
+
+
+- (void)setupNavAndTableTheme
+{
     
     // 左边按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_friendsearch" highIcon:@"navigationbar_friendsearch_highlighted" target:self action:@selector(findFriend)];
@@ -41,14 +62,64 @@
     // 图标
     [titleButton setImage:[UIImage imageWithName:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     // 文字
-    [titleButton setTitle:@"哈哈哈哈" forState:UIControlStateNormal];
+    [titleButton setTitle:@"KD Store" forState:UIControlStateNormal];
     // 位置和尺寸
     titleButton.frame = CGRectMake(0, 0, 100, 40);
     //    titleButton.tag = IWTitleButtonDownTag;
     [titleButton addTarget:self action:@selector(titleClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.titleView = titleButton;
+    
+    // 设置表格背景并去掉分割线
+    self.tableView.backgroundColor = MKLColor(226, 226, 226);
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, WBStatusTableBorder, 0);
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
+
+
+
+/**
+ *  加载微博数据
+ */
+- (void)setupStatusData
+{
+    if([WBAccountTool account] == nil) return; // 没有账号登录
+    // 1.创建请求管理对象
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 2.封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [WBAccountTool account].access_token;
+    
+    // 3.发送请求
+    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params
+     success:^(AFHTTPRequestOperation *operation, id responseObject) {
+         // 将字典数组转为模型数组(里面放的就是IWStatus模型)
+         NSArray *statusArray = [WBStatus objectArrayWithKeyValuesArray:responseObject[@"statuses"]];
+         
+         // 创建frame模型对象
+         NSMutableArray *statusFrameArray = [NSMutableArray array];
+         for (WBStatus *status in statusArray)
+         {
+             WBStatusFrame *statusFrame = [[WBStatusFrame alloc] init];
+             // 传递微博模型数据
+             statusFrame.status = status;
+             [statusFrameArray addObject:statusFrame];
+         }
+         
+         // 赋值
+         self.statusFrames = statusFrameArray;
+         
+         // 刷新表格
+         [self.tableView reloadData];
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         
+     }];
+}
 
 - (void)titleClick:(MKLTitleButton *)titleButton
 {
@@ -79,23 +150,26 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 10;
+    return self.statusFrames.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"homeCellID";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-    }
+    // 1.创建cell
+    WBStatusCell *cell = [WBStatusCell cellWithTableView:tableView];
     
-    // Configure the cell...
-    cell.textLabel.text = @"Home Test String";
-    
+    // 2.传递frame模型
+    cell.statusFrame = self.statusFrames[indexPath.row];
     
     return cell;
+}
+
+
+#pragma mark - 代理方法
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    WBStatusFrame *statusFrame = self.statusFrames[indexPath.row];
+    return statusFrame.cellHeight;
 }
 
 /*

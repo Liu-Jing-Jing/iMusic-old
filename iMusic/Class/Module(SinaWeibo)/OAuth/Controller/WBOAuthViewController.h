@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WBOAuthViewController : UIViewController
+@protocol WBOAuthViewControllerDelegate <NSObject>
 
+- (void)weiboOAuth2Success;
+
+@end
+@interface WBOAuthViewController : UIViewController
+@property (nonatomic, weak) id<WBOAuthViewControllerDelegate> delegate;
 @end

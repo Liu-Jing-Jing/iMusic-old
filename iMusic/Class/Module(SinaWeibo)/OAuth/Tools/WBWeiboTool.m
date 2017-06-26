@@ -15,6 +15,16 @@
 // 选择根控制器
 + (void)chooseRootViewController
 {
+    
+    // 添加转场动画
+    CATransition *anim = [CATransition animation];
+    anim.type = @"rippleEffect";
+    anim.duration = 0.5;
+    //    anim.subtype = kCATransitionFromRight;
+    //    anim.startProgress = 0.0;
+    //    anim.endProgress = 0.5;
+    [[UIApplication sharedApplication].keyWindow.layer addAnimation:anim forKey:nil];
+    
     // 取出版本号
     NSString *key = @"CFBundleVersion";
     
@@ -27,7 +37,7 @@
     {
         // 显示状态栏
         [UIApplication sharedApplication].statusBarHidden = NO;
-        
+        // if(![[UIApplication sharedApplication].keyWindow.rootViewController isKindOfClass:[MKLTabBarViewController class]])
         [UIApplication sharedApplication].keyWindow.rootViewController = [[MKLTabBarViewController alloc]init];
     }
     else
