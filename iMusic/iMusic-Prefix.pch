@@ -41,4 +41,8 @@
 #define WBAppSecret     @"5c6ee830403084f78424aacf7f9e1fbf"
 #define WBRedirectUrl   @"https://api.weibo.com/oauth2/default.html"
 
+// 6.微博cell内部相册
+#define WBPhotoW 70
+#define WBPhotoH 70
+#define WBPhotoMargin 10
 #endif

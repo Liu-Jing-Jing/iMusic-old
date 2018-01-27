@@ -7,8 +7,18 @@
 //
 
 #import "WBStatus.h"
+#import "WBPhoto.h"
+#import "MJExtension.h"
 #import "NSDate+Extension.h"
 @implementation WBStatus
+
+//** #warning MJ框架必须告诉数组装的什么模型 */
+- (NSDictionary *)objectClassInArray
+{
+    return @{@"pic_urls" : [WBPhoto class]};
+}
+
+
 - (NSString *)created_at
 {
     // _created_at == Fri May 09 16:30:34 +0800 2014

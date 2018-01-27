@@ -4,7 +4,7 @@
 //
 //  Created by Mark Lewis on 17-6-23.
 //  Copyright (c) 2017年 MarkLewis. All rights reserved.
-//
+//  微博模型(一个IWStatus对象就代表一条微博)
 
 #import <Foundation/Foundation.h>
 
@@ -26,10 +26,15 @@
  *  微博的ID
  */
 @property (nonatomic, copy) NSString *idstr;
+
+/**
+ *  微博的配图(数组中装模型:IWPhoto)
+ */
+@property (nonatomic, strong) NSArray *pic_urls;
 /**
  *  微博的单张配图
  */
-@property (nonatomic, copy) NSString *thumbnail_pic;
+//@property (nonatomic, copy) NSString *thumbnail_pic;
 
 /**
  *  微博的转发数

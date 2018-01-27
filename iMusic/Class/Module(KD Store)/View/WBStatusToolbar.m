@@ -53,6 +53,8 @@
     self = [super initWithFrame:frame];
     if (self)
     {
+        self.userInteractionEnabled = YES;
+        
         // 1.设置图片和背景
         self.userInteractionEnabled = YES;
         self.image = [self stretchableImageWithNamed:@"timeline_card_bottom_background"];

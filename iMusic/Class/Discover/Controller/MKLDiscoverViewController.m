@@ -16,7 +16,7 @@
 #import "MKLMainNavigationController.h"
 #import "MKLMusicListViewController.h"
 #import "JTSDemoViewController.h"
-@interface MKLDiscoverViewController ()
+@interface MKLDiscoverViewController ()<UITextFieldDelegate>
 @property (nonatomic, strong) NSMutableArray *data;
 @end
 
