@@ -26,8 +26,8 @@
 @property (nonatomic, strong) NSArray *statusFrames;
 @end
 
-@implementation MKLHomeViewController
 
+@implementation MKLHomeViewController
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -43,14 +43,12 @@
     [super viewDidLoad];
 
     [self setupNavAndTableTheme];
-    
     [self setupStatusData];
 }
 
 
 - (void)setupNavAndTableTheme
 {
-    
     // 左边按钮
     self.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithIcon:@"navigationbar_friendsearch" highIcon:@"navigationbar_friendsearch_highlighted" target:self action:@selector(findFriend)];
     
