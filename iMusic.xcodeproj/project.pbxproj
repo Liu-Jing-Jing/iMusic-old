@@ -20,6 +20,7 @@
 		22392F54201CC86400CAF6C5 /* WBStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22392F45201CC86400CAF6C5 /* WBStatusCell.m */; };
 		22392F55201CC86400CAF6C5 /* WBStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22392F47201CC86400CAF6C5 /* WBStatusToolbar.m */; };
 		22392F56201CC86400CAF6C5 /* WBStatusTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22392F49201CC86400CAF6C5 /* WBStatusTopView.m */; };
+		22D2AFDD201DA0EC00145960 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22D2AFDC201DA0EC00145960 /* AVFoundation.framework */; };
 		C505D1301EF0221800FEECDB /* KDDisplayHTMLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C505D12F1EF0221800FEECDB /* KDDisplayHTMLViewController.m */; };
 		C505D13B1EF025DF00FEECDB /* SettingArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C505D1321EF025DF00FEECDB /* SettingArrowItem.m */; };
 		C505D13C1EF025DF00FEECDB /* SettingGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C505D1341EF025DF00FEECDB /* SettingGroup.m */; };
@@ -220,6 +221,7 @@
 		22392F47201CC86400CAF6C5 /* WBStatusToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBStatusToolbar.m; sourceTree = "<group>"; };
 		22392F48201CC86400CAF6C5 /* WBStatusTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBStatusTopView.h; sourceTree = "<group>"; };
 		22392F49201CC86400CAF6C5 /* WBStatusTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBStatusTopView.m; sourceTree = "<group>"; };
+		22D2AFDC201DA0EC00145960 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C505D12E1EF0221800FEECDB /* KDDisplayHTMLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KDDisplayHTMLViewController.h; sourceTree = "<group>"; };
 		C505D12F1EF0221800FEECDB /* KDDisplayHTMLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KDDisplayHTMLViewController.m; sourceTree = "<group>"; };
 		C505D1311EF025DF00FEECDB /* SettingArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingArrowItem.h; sourceTree = "<group>"; };
@@ -527,12 +529,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C539925B1EB852F50056C756 /* libWeiboSDK.a in Frameworks */,
 				C5BDABF81EF4066000AFE16D /* MediaPlayer.framework in Frameworks */,
+				22D2AFDD201DA0EC00145960 /* AVFoundation.framework in Frameworks */,
 				C599C4761EA674C10056E052 /* AudioToolbox.framework in Frameworks */,
 				C55EDE481E92861400154676 /* CoreGraphics.framework in Frameworks */,
-				C55EDE4A1E92861400154676 /* UIKit.framework in Frameworks */,
 				C55EDE461E92861400154676 /* Foundation.framework in Frameworks */,
+				C55EDE4A1E92861400154676 /* UIKit.framework in Frameworks */,
+				C539925B1EB852F50056C756 /* libWeiboSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -846,6 +849,7 @@
 		C55EDE441E92861400154676 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22D2AFDC201DA0EC00145960 /* AVFoundation.framework */,
 				C5BDABF71EF4066000AFE16D /* MediaPlayer.framework */,
 				C599C4751EA674C10056E052 /* AudioToolbox.framework */,
 				C55EDE451E92861400154676 /* Foundation.framework */,

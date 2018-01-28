@@ -8,6 +8,7 @@
 
 #import "MJMoviePlayerViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
+#include <AVFoundation/AVFoundation.h>
 #include <sys/socket.h>
 @interface MJMoviePlayerViewController ()
 @property (nonatomic, strong) MPMoviePlayerController *moviePlayer;
@@ -30,7 +31,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [AVAudioSession sharedInstance];
     [self.moviePlayer play];
     [self addNotification];
 }

@@ -58,7 +58,7 @@
     
     // 0.设置cell选中时的背景
     self.selectedBackgroundView = [[UIView alloc] init];
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor clearColor]; //默认有白色的一圈在Cell周围
     /** 1.顶部的view */
     WBStatusTopView *topView = [[WBStatusTopView alloc] init];
     [self.contentView addSubview:topView];
