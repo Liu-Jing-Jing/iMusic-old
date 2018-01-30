@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<title>微博正文</title>
+<meta http-equiv="Content-Language" content="en-us" /> 
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="description" content="Description" />
+<meta name="keywords" content="Keywords" /> 
+<meta name="viewport" content="width=device-width; minimum-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+<style>
+html, body {
+margin: 0;
+padding: 0;
+/*background-image: url(bg.png);  */
+background-color:#FFFFFF;
+background-repeat: repeat-y;  
+background-attachment: fixed 
+}
+#page-container {
+	width: 510px;
+	padding-top: 315px;
+	padding-left: 15px;padding-right: 15px;padding-bottom: 15px;
+	overflow: hidden;
+}
+#content_pic{
+	/*border:1px solid #DDDDDD;
+	padding:1px;*/
+	text-align:center;
+	padding: 10px;
+}
+.footer_text{
+	padding-top: 15px; padding-bottom:10px;
+	font-size:13px;color:#999999;
+}
+#content_text{
+	font-family: Arial;
+	padding-bottom:5px;
+	font-size: 20px;
+	line-height: 1.4;
+}
+#content_origin{
+	font-family: Arial;
+	/*background-color:#eeeeee;*/
+	padding: 0px;
+	margin-bottom: 5px;
+	font-size: 18px;
+	line-height: 1.4;
+}
+#content_origin .header{
+	background: url(popo_top.png);
+	width:510px; height:18px;
+}
+#content_origin .mid{
+	background: url(popo_mid.png);
+	width:494px; padding:8px;
+}
+#content_origin .footer{
+	background: url(popo_bottom.png);
+	width:510px; height:9px;
+}
+#weiboThumb {
+	padding-top: 10px;
+}
+
+#main-nav {
+height: 80px;
+padding-left: 10px;
+padding-right: 10px;
+}
+#comment_forward {
+float: right;
+width: 80px;
+margin-top: 15px;
+}
+#forward_num {
+height: 25px;
+}
+#nick_time {
+float: right;
+width: 160px;
+margin-top: 15px;
+}
+#nick {
+height: 30px;
+}
+#time {
+height: 20px;
+}
+#photo {
+float: left;
+width: 60px;
+margin-top: 15px;
+}
+#footer {
+height: 20px;
+}
+a:link {
+text-decoration: none;
+color: #023298;
+}
+a:visited {
+text-decoration: none;
+}
+a:hover {
+text-decoration: none;
+}
+a:active {
+text-decoration: none;
+}
+</style>
+</head>
+<body ontouchmove="touchMove(event)" ontouchstart="show_coords(event)">
+
+<table border="0" cellpadding="0" cellspacing="0" height="235">
+	<tr><td style="vertical-align:top;">
+		<div id="page-container" style="clear:both">
+			<div id="content_text">
+				%@
+			</div>
+			%@<!-- 原文 -->
+			<div class="footer_text">
+				%@ | 来自 %@
+				<span style="width:170px;float:right;text-align:right" id="area_crnum"><img height="15" src="crnum_loading_pic.gif" /></span>
+			</div>
+		</div>
+	</td></tr>
+</table>
+<script language="javascript">
+function show_coords(event)
+{
+y=event.targetTouches[0].clientY;
+document.location="myweb:touch:start:"+y;
+}
+function touchMove(event)
+{
+document.location="myweb:touch:move:";
+}
+</script>
+
+
+</body>
+</html>
