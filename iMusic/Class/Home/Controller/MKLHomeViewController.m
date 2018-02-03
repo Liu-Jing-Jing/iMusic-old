@@ -28,6 +28,7 @@
 
 
 @implementation MKLHomeViewController
+#pragma mark - View Controller Lifecycle
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -43,9 +44,29 @@
     [super viewDidLoad];
 
     [self setupNavAndTableTheme];
+    [self setupRefreshView];
     [self setupStatusData];
+
 }
 
+#pragma mark - View Setting up
+- (void)setupRefreshView
+{
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(RefreshControlStateChanged:) forControlEvents:UIControlEventValueChanged];
+    
+    [self.tableView addSubview:refreshControl];
+}
+
+- (void)RefreshControlStateChanged:(UIRefreshControl *)sender
+{
+#ifdef __i386__
+    MKLog(@"Pulldown refresh complete");
+#endif
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [sender endRefreshing];
+    });
+}
 
 - (void)setupNavAndTableTheme
 {
